@@ -151,3 +151,8 @@ commands:
     short: Opens the MySQL CLI as root
     run:
       - orbit run command-mysql-cli -c config/orbit/orbit-commands.yml -v Project,config/project.yml;Modules,config/modules.yml -e Config,config/.env {{ if debug }}-d{{ end }}
+
+  - use: backup
+    short: Copy the content of the App folder
+    run:
+      - orbit run command-backup -c config/orbit/orbit-commands.yml -v Project,config/project.yml;Modules,config/modules.yml -e Config,config/.env {{ if debug }}-d{{ end }}

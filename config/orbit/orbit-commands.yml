@@ -39,3 +39,7 @@ commands:
       {{ else }}
       - echo MySQL is not enable!
       {{ end }}
+
+  - use: command-backup
+    run:
+      - cp -R {{ .EnvFiles.Config.DIR }} {{ .EnvFiles.Config.BACKUP_DIR }}
